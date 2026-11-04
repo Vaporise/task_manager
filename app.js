@@ -13,7 +13,7 @@ function createTask(id, title) {
 }
 
 const task1 = createTask(1, "First Task");
-const task2 = createTask(2, "Sencond Tast");
+const task2 = createTask(2, "Second Task");
 const task3 = createTask(3, "Third Task");
 
 function addTask(tasks, task) {
@@ -25,4 +25,18 @@ addTask(tasks, task1);
 addTask(tasks, task2);
 addTask(tasks, task3);
 
-console.log(tasks);
+task2.completed = true;
+
+function listTasks(tasks) {
+    let complete;
+    for (const task of tasks){
+        if (task.completed === true){
+            complete = "Complete";
+        } else {
+            complete = "Incomplete";
+        }
+        console.log(`${task.id} - ${task.title} - ${complete}`)
+    }
+}
+
+listTasks(tasks);
