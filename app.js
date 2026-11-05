@@ -62,3 +62,21 @@ function completeTask(tasks, id) {
 
 completeTask(tasks, 3);
 console.log(tasks);
+
+
+function deleteTask(tasks, id) {
+    
+    const targetIndex = tasks.findIndex(task => task.id === id); 
+    if (targetIndex !== -1) {
+        tasks.splice(targetIndex, 1);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(deleteTask(tasks, 3));
+console.log(deleteTask(tasks, 99));
+console.log(deleteTask(tasks, 3));
+
+listTasks(tasks);
